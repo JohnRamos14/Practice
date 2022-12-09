@@ -12,17 +12,21 @@
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
   <link rel="stylesheet" href="unsplashStyles.css">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="unsplashService.js"></script>
 </head>
 
 <body>
 
   <nav class="navbar navbar-light bg-light">
-    <form class="container-fluid justify-content-center">
-      <button id="add-button" class="btn btn-outline-success me-2" data-bs-toggle="modal"
-        data-bs-target="#exampleModalLong" type="button">
-        Add Motorcycle
-      </button>
-    </form>
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand">Navbar</a>
+        <form class="d-flex">
+          <input id="query"class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button id="search-btn" class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
   </nav>
 
   <div class="container" id="motoCard">
