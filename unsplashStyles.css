@@ -1,0 +1,28 @@
+
+body {
+    background: linear-gradient(70deg, rgba(2, 0, 36, 1) 0%, rgb(31, 31, 61) 0%, rgb(4, 86, 102) 100%);
+}
+
+
+div {
+    margin-bottom: .5em;
+
+}
+
+.card {
+    border: 1px solid;
+    margin-bottom: 1em;
+    height: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: #f1f1f1;
+}
+
+img {
+    padding: 1em;
+    width: 100%;
+    margin-top: 1em;
+    height: 100%;
+    object-fit: cover;
+}
+
+

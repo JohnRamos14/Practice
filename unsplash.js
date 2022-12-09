@@ -11,24 +11,23 @@ const getSearchedPhotos = () => {
 function getSearchData() {
   console.log("getSearchData is firing");
   let query = document.getElementById("query").value;
-  console.log(query);
+  return query;
 }
 
 function onSearchSuccess(response) {
   console.log("onSearchSuccess is firing");
-  console.log(response.data);
 
   let result = response.data.results;
+
   result.map((item) => {
     let div = document.createElement("div");
+    //render item 4 in a row
+    div.classList.add("col-3");
     div.classList.add("card");
-
+    div.classList.add("row");
     let img = document.createElement("img");
     img.src = item.urls.small;
     div.appendChild(img);
-    let title = document.createElement("h3");
-    title.innerHTML = item.alt_description;
-    div.appendChild(title);
 
     document.body.appendChild(div);
   });
