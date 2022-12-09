@@ -11,6 +11,7 @@ const getJsonData = () => {
             let div = document.createElement("div");
             div.innerHTML = JSON.stringify(item);
             document.body.appendChild(div);
+
         })
 
 
