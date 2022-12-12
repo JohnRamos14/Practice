@@ -1,19 +1,14 @@
-
-
 document.getElementById("search-btn").addEventListener("click", (e) => {
   e.preventDefault();
-
   // if(document.getElementById("query").value === null){
-
   getSearchedPhotos();
 });
 
 const getSearchedPhotos = () => {
   let searchTerm = getSearchData();
-  unsplashService.search(searchTerm).then(onSearchSuccess).catch(onSearchError);
-
-
-
+  unsplashService.search(searchTerm)
+    .then(onSearchSuccess)
+    .catch(onSearchError);
 };
 
 function getSearchData() {
@@ -28,21 +23,18 @@ function onSearchSuccess(response) {
   let result = response.data.results;
 
   result.map((item) => {
-    let div = document.createElement("div");
-    div.classList.add("col-lg-3", "col-md-4", "col-sm-6");
     let card = document.createElement("div");
+    //make the card render in rows
+        
     card.classList.add("card");
-    div.appendChild(card);
     let img = document.createElement("img");
     img.src = item.urls.regular;
-    div.appendChild(img);
-
-    document.body.appendChild(div);
+    card.appendChild(img);
+    document.querySelector("#unsplash").appendChild(card);
   });
 
   let query = document.getElementById("query").value;
   localStorage.setItem(`${query}`, JSON.stringify(result));
-
 }
 
 function onSearchError(response) {
