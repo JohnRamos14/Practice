@@ -1,0 +1,21 @@
+import React, { useState } from "react";
+import { search } from "../../services/unsplashService";
+
+const Cards = () => {
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    console.log("useEffect is firing");
+
+    search.then(onSearchSuccess).catch(onSearchError);
+  }, []);
+
+  const onSearchSuccess = (response) => {
+    console.log("onSearchSuccess is firing");
+    let result = response.data.results;
+
+    setCards(() => {
+      return result;
+    });
+  };
+};
