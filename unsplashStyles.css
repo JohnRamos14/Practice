@@ -3,12 +3,9 @@ body {
 }
 
 .navbar {
-   
     justify-content: center;
     align-items: center;
     background-color: #f1f1f1;
-    padding: 1em;
-    margin-bottom: 1em;
 }
 
 
