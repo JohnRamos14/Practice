@@ -23,20 +23,14 @@ function onSearchSuccess(response) {
   let result = response.data.results;
 
   result.map((item) => {
-    let card = document.createElement("div");
-    //make the card render in rows
-        
-    card.classList.add("card");
-    let img = document.createElement("img");
-    img.src = item.urls.regular;
-    card.appendChild(img);
-    document.querySelector("#unsplash").appendChild(card);
+    let div = document.createElement("div");
+    div.classList.add("col-lg-3", "col-md-4", "col-sm-6");
+    div.innerHTML = `
+    <div class="card text-center">
+    <img src="${item.urls.regular}" class="card-img-top" alt="...">`;
+    document.querySelector(".row").appendChild(div);
   });
-
-  let query = document.getElementById("query").value;
-  localStorage.setItem(`${query}`, JSON.stringify(result));
 }
-
 function onSearchError(response) {
   console.error({ error: response });
 }
