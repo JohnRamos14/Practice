@@ -5,7 +5,17 @@ input{
     margin-left: 100px;
     margin-top: 20px;
     width: 60%;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: bold; 
+}
+
+span{
+    font-size: 18px;
+    font-weight: bold; 
+}
+
+img{
+    height: 90px;
+    width: 90px;
 }
 

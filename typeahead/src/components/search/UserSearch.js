@@ -9,12 +9,11 @@ const UserSearch = () => {
 
   const handleSearch = (query) => {
     setIsLoading(true);
-
     search(query).then(onSearchSuccess).catch(onSearchError);
   };
 
   const onSearchSuccess = (response) => {
-    console.log(response);
+    console.log(response.data.items);
     let result = response.data.items;
     setOptions(result);
     setIsLoading(false);
@@ -43,13 +42,10 @@ const UserSearch = () => {
             <img
               alt={item.login}
               src={item.avatar_url}
-              style={{
-                height: "60px",
-                marginRight: "10px",
-                width: "60px",
-              }}
             />
-            <span>{item.login}</span>
+            <div>
+              <span onClick={()=> window.open(item.html_url, "_blank")} target="_blank">{item.login}</span>
+            </div>
           </div>
         </>
       )}
