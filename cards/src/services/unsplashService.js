@@ -17,4 +17,4 @@ const search = (query) => {
   return axios(config);
 };
 
-export { search }
+export { search };
