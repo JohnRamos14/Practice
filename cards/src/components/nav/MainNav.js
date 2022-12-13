@@ -13,10 +13,19 @@ const MainNav = () => {
   };
 
   const onSearchClick = (e) => {
-    console.log("useEffect is firing");
     let query = formData;
-    console.log("query");
-    search(query).then(onSearchSuccess).catch(onSearchError);
+
+    if(localStorage.getItem(`${query}`) === null){
+      search(query).then(onSearchSuccess).catch(onSearchError);
+    }else{
+     let retrieveKey = JSON.parse(localStorage.getItem(`${query}`))
+     console.log("NO API CALL GETTING FROM LOCAL STORAGE -->", retrieveKey)
+     setCards(retrieveKey);
+     retrieveKey.map((card) => {
+      return <Cards card={card} key={"Card-" + card.id} />;
+     })
+    }
+ 
   };
   const onSearchSuccess = (response) => {
     console.log("onSearchSuccess is firing");
