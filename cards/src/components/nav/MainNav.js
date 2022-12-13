@@ -15,17 +15,16 @@ const MainNav = () => {
   const onSearchClick = (e) => {
     let query = formData;
 
-    if(localStorage.getItem(`${query}`) === null){
+    if (localStorage.getItem(`${query}`) === null) {
       search(query).then(onSearchSuccess).catch(onSearchError);
-    }else{
-     let retrieveKey = JSON.parse(localStorage.getItem(`${query}`))
-     console.log("NO API CALL GETTING FROM LOCAL STORAGE -->", retrieveKey)
-     setCards(retrieveKey);
-     retrieveKey.map((card) => {
-      return <Cards card={card} key={"Card-" + card.id} />;
-     })
+    } else {
+      let retrieveKey = JSON.parse(localStorage.getItem(`${query}`));
+      console.log("NO API CALL GETTING FROM LOCAL STORAGE -->", retrieveKey);
+      setCards(retrieveKey);
+      retrieveKey.map((card) => {
+        return <Cards card={card} key={"Card-" + card.id} />;
+      });
     }
- 
   };
   const onSearchSuccess = (response) => {
     console.log("onSearchSuccess is firing");
