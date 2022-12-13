@@ -21,7 +21,9 @@ const MainNav = () => {
   const onSearchSuccess = (response) => {
     console.log("onSearchSuccess is firing");
     let result = response.data?.results;
-    console.log(result);
+    let key = formData;
+    localStorage.setItem(`${key}`, JSON.stringify(result));
+
     setCards(() => {
       return result;
     });
@@ -61,9 +63,9 @@ const MainNav = () => {
         </Container>
       </Navbar>
 
-        <div className="container">
-         <div className="row">{cardsArr.map(mapCards)}</div>
-         </div>
+      <div className="container">
+        <div className="row">{cardsArr.map(mapCards)}</div>
+      </div>
     </>
   );
 };
