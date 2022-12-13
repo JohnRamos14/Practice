@@ -9,7 +9,6 @@ const Cards = (props) => {
       <Col lg={3} md={4} sm={6} className="d-flex align-items-stretch">
         <div>
           <Card.Img variant="top" src={image} className="img" />
-    
         </div>
       </Col>
     </>
