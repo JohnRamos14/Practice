@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { search } from "../../services/unsplashService";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Cards from "../mappedCards/Cards";
-import { Row } from "react-bootstrap";
 
 const MainNav = () => {
   const [formData, setFormData] = useState("");
@@ -21,7 +20,7 @@ const MainNav = () => {
   };
   const onSearchSuccess = (response) => {
     console.log("onSearchSuccess is firing");
-    let result = response.data.results;
+    let result = response.data?.results;
     console.log(result);
     setCards(() => {
       return result;
@@ -56,15 +55,15 @@ const MainNav = () => {
               variant="outline-success"
               onClick={onSearchClick}
             >
-              Search
+              Search Images
             </Button>
           </Form>
         </Container>
       </Navbar>
 
-      <Container>
-        <Row>{cardsArr.map(mapCards)}</Row>
-      </Container>
+        <div className="container">
+         <div className="row">{cardsArr.map(mapCards)}</div>
+         </div>
     </>
   );
 };
