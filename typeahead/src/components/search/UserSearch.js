@@ -32,7 +32,7 @@ const UserSearch = () => {
       id="sample"
       isLoading={isLoading}
       labelKey="login"
-      minLength={3}
+      minLength={2}
       onSearch={handleSearch}
       options={options}
       placeholder="Search for a Github user..."
@@ -44,7 +44,7 @@ const UserSearch = () => {
               src={item.avatar_url}
             />
             <div>
-              <span onClick={()=> window.open(item.html_url, "_blank")} target="_blank">{item.login}</span>
+              <span onClick={()=> window.open(item.html_url, "_blank")}>{item.login}</span>
             </div>
           </div>
         </>
